@@ -1,2 +1,8 @@
-package PACKAGE_NAME;public class Main {
+import gui.GUI;
+import javafx.application.Application;
+
+public class Main {
+    public static void main(String[] args) {
+        Application.launch(GUI.class);
+    }
 }

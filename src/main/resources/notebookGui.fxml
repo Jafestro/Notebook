@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NoteController">
+   <children>
+      <Label prefHeight="39.0" prefWidth="223.0" text="      Jafestro-Note">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="342.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="378.0" prefWidth="750.0">
+               <children>
+                  <TextField fx:id="title" prefHeight="45.0" prefWidth="424.0" promptText="&quot;Title&quot;">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="note" prefHeight="255.0" prefWidth="483.0" promptText="Notes..." wrapText="true">
+                     <font>
+                        <Font name="Book Antiqua" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextArea>
+                  <HBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="424.0">
+                     <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" text="Add" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="342.0" prefWidth="500.0">
+               <children>
+                  <ScrollPane pannable="true" prefHeight="378.0" prefWidth="501.0">
+                     <content>
+                        <ListView fx:id="notes" prefHeight="605.0" prefWidth="162.0" />
+                     </content>
+                  </ScrollPane>
+                  <HBox alignment="TOP_RIGHT" prefHeight="120.0" prefWidth="170.0">
+                     <children>
+                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#editNote" text="Edit" />
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteNote" text="Delete" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
